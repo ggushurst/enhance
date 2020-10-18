@@ -14,6 +14,12 @@ protocol.registerSchemesAsPrivileged([
   { scheme: 'app', privileges: { secure: true, standard: true } }
 ])
 
+const { width, height } = screen.getPrimaryDisplay().workAreaSize
+var y  = screen.getPrimaryDisplay().bounds
+console.log(y)
+console.log(width, height);
+
+
 function createWindow() {
   // Create the browser window.
   win = new BrowserWindow({
