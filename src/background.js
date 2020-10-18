@@ -73,6 +73,12 @@ app.on('ready', async () => {
   createWindow()
 })
 
+app.on('web-contents-created', (event, wc) => {
+    wc.on('before-input-event', (event, input) => {
+        console.log(input);
+    })
+})
+
 // Exit cleanly on request from parent process in development mode.
 if (isDevelopment) {
   if (process.platform === 'win32') {
@@ -87,3 +93,4 @@ if (isDevelopment) {
     })
   }
 }
+
